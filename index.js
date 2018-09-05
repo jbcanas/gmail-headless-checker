@@ -4,9 +4,7 @@ const CREDS = require('./creds');
 const client = require('twilio')(CREDS.sid, CREDS.token);
 
 async function run() {
-    const browser = await puppeteer.launch({
-        headless: false,
-    });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     await page.goto('https://gmail.com');
